@@ -105,6 +105,19 @@ JOIN car c ON o.reg_num = c.reg_num
 JOIN participated pt ON p.driver_id = pt.driver_id AND c.reg_num = pt.reg_num
 JOIN accident a ON pt.report_num = a.report_num;
 
+-- WEEK2
+
+
+select * from car order by year asc;
+
+select count(report_num)CNT from car c, participated p where c.reg_num=p.reg_num and model='Lancer';
+
+SELECT COUNT(DISTINCT a.driver_id) AS CNT
+FROM participated a, accident b
+WHERE a.report_num = b.report_num
+AND YEAR(b.accident_date) = 2008;
+
+
 
 
 
